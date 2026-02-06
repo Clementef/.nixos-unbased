@@ -81,6 +81,9 @@
     #media-session.enable = true;
   };
 
+  # auto rotation
+  hardware.sensor.iio.enable = true;
+
   # bluetooth support
   hardware.bluetooth = {
     enable = true;
