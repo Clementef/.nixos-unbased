@@ -139,6 +139,8 @@
       vlc # Cross-platform media player and streaming server
       wayland-utils # Wayland utilities
       keepassxc
+      bolt-launcher
+      runelite
     ];
   };
 
