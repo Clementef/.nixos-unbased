@@ -141,6 +141,12 @@
       keepassxc
       bolt-launcher
       runelite
+      neovim
+      ripgrep
+      fd
+      gnumake
+      libgcc
+      go
     ];
   };
 
