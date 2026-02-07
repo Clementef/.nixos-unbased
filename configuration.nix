@@ -147,6 +147,7 @@
       gnumake
       libgcc
       go
+      stow
     ];
   };
 
