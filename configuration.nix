@@ -116,8 +116,6 @@
     description = "clem";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      kdePackages.kate
-      thunderbird
       obsidian
       mullvad-browser
       zed-editor
