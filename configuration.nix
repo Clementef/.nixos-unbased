@@ -56,6 +56,10 @@
 
   services.desktopManager.plasma6.enable = true;
 
+  environment.plasma6.excludePackages = with pkgs; [
+    kdePackages.kate
+  ];
+
   # Configure keymap in X11
   services.xserver.xkb = {
     layout = "us";
@@ -134,6 +138,9 @@
       kdePackages.kclock # Clock app
       kdePackages.kcolorchooser # A small utility to select a color
       kdePackages.ksystemlog # KDE SystemLog Application
+      kdePackages.isoimagewriter # Optional: Program to write hybrid ISO files onto USB disks
+      kdePackages.partitionmanager # Optional: Manage the disk devices, partitions and file systems on your computer
+      hardinfo2 # System information and benchmarks for Linux systems
       vlc # Cross-platform media player and streaming server
       wayland-utils # Wayland utilities
       keepassxc
