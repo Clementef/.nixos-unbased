@@ -130,6 +130,7 @@
       alacritty
       nerd-fonts.jetbrains-mono
       librewolf
+      qbittorrent
       krita
       R
       python315
