@@ -131,6 +131,7 @@
       nerd-fonts.jetbrains-mono
       librewolf
       qbittorrent
+      veracrypt
       R
       python315
       # KDE
@@ -166,6 +167,7 @@
       nerd-fonts.jetbrains-mono
       librewolf
       qbittorrent
+      veracrypt
       vlc # Cross-platform media player and streaming server
       wayland-utils # Wayland utilities
       keepassxc
