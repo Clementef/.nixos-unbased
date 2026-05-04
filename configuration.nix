@@ -121,6 +121,7 @@
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       obsidian
+      anki
       mullvad-browser
       zed-editor
       bitwarden-desktop
@@ -161,7 +162,7 @@
   users.users.two = {
     isNormalUser = true;
     description = "test user";
-    extraGroups = [ "networkmanager" ];
+    extraGroups = [ "networkmanager" "wheel"];
     packages = with pkgs; [
       mullvad-browser
       nerd-fonts.jetbrains-mono
