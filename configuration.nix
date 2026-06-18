@@ -158,23 +158,6 @@
     ];
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.two = {
-    isNormalUser = true;
-    description = "test user";
-    extraGroups = [ "networkmanager" "wheel"];
-    packages = with pkgs; [
-      mullvad-browser
-      nerd-fonts.jetbrains-mono
-      librewolf
-      qbittorrent
-      veracrypt
-      vlc # Cross-platform media player and streaming server
-      wayland-utils # Wayland utilities
-      keepassxc
-      neovim
-    ];
-  };
 
   services.mullvad-vpn = {
     enable = true;
