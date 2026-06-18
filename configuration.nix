@@ -149,6 +149,7 @@
       bolt-launcher
       runelite
       neovim
+      lazygit
       ripgrep
       fd
       gnumake
