@@ -135,6 +135,9 @@
       veracrypt
       R
       python315
+      # emulators
+      mgba
+      fceux
       # KDE
       kdePackages.kcalc # Calculator
       kdePackages.kclock # Clock app
