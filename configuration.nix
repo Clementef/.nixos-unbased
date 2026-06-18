@@ -123,7 +123,7 @@
       obsidian
       anki
       mullvad-browser
-      zed-editor
+      vscode
       bitwarden-desktop
       libreoffice-qt
       hunspell
