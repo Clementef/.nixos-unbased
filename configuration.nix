@@ -124,6 +124,7 @@
       anki
       mullvad-browser
       vscode
+      discord
       bitwarden-desktop
       libreoffice-qt
       hunspell
