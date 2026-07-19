@@ -130,6 +130,7 @@
       hunspell
       hunspellDicts.en_US
       alacritty
+      rofi
       nerd-fonts.jetbrains-mono
       qbittorrent
       veracrypt
