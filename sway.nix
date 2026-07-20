@@ -5,6 +5,9 @@
     wrapperFeatures.gtk = true; # Configures GTK themes and icons properly
   };
 
+  # Enables Gnome Keyring to store secrets for applications. 
+  services.gnome.gnome-keyring.enable = true;
+
   # Security & Authentication
   security.polkit.enable = true;
   
