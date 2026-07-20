@@ -1,23 +1,16 @@
-{ config, pkgs, ... }:
-
+{ config, pkgs, lib, ... }:
 {
-  # Enable the Sway window manager
+  environment.systemPackages = with pkgs; [
+    wl-clipboard # Copy/Paste functionality.
+    mako # Notification utility.
+  ];
+
+  # Enables Gnome Keyring to store secrets for applications. 
+  services.gnome.gnome-keyring.enable = true;
+
+  # Enable Sway.
   programs.sway = {
     enable = true;
-    wrapperFeatures.gtk = true; # Required for GTK applications to look right
-    extraPackages = with pkgs; [
-      swaylock
-      swayidle
-      foot
-      fuzzel     # Application launcher
-      waybar     # Status bar
-      mako       # Notification daemon
-    ];
+    wrapperFeatures.gtk = true;
   };
-
-  # Enable Wayland display manager support (or use greetd / SDDM)
-  services.xserver.enable = false; # Optional: disable X11 completely
-  
-  # Enable Polkit for privilege elevation popups (GUI sudo)
-  security.polkit.enable = true;
 }
