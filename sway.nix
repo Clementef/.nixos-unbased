@@ -9,7 +9,7 @@
   services.gnome.gnome-keyring.enable = true;
 
   security.pam.services = {
-    swaylock.enableGnomeKeyring = true;
+    login.enableGnomeKeyring = true;
   };
   
   # Security & Authentication
