@@ -58,6 +58,9 @@
 
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.kate
+    kdePackages.elisa
+    kdePackages.discover
+    kdePackages.qrca
   ];
 
   # Configure keymap in X11
@@ -140,7 +143,6 @@
       mgba
       fceux
       # KDE
-      kdePackages.kcalc # Calculator
       kdePackages.kclock # Clock app
       kdePackages.kcolorchooser # A small utility to select a color
       kdePackages.ksystemlog # KDE SystemLog Application
