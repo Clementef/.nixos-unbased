@@ -5,17 +5,11 @@
     wrapperFeatures.gtk = true; # Configures GTK themes and icons properly
   };
 
-  programs.regreet.enable = true;
-
   # Enables Gnome Keyring to store secrets for applications. 
   services.gnome.gnome-keyring.enable = true;
 
   security.pam.services = {
-    greetd.enableGnomeKeyring = true;
     swaylock.enableGnomeKeyring = true;
-  
-    # If using a display manager such as GDM
-    #gdm.enableGnomeKeyring = true;
   };
   
   # Security & Authentication
