@@ -198,7 +198,6 @@
     unzip
     findutils
     maliit-keyboard
-    sddm-astronaut
     wl-clipboard
   ];
 
