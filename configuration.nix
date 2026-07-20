@@ -110,7 +110,6 @@
       obsidian
       anki
       mullvad-browser
-      vscode
       discord
       bitwarden-desktop
       libreoffice-qt
@@ -164,11 +163,7 @@
       neovim
     ];
   };
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-39.8.10"
-  ];
-
+  
   services.mullvad-vpn = {
     enable = true;
     package = pkgs.mullvad-vpn;
