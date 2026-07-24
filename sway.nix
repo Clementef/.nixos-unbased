@@ -1,28 +1,34 @@
 { config, pkgs, lib, ... }:
 {
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true; # Configures GTK themes and icons properly
-  };
+  environment.systemPackages = with pkgs; [
+    wl-clipboard # Copy/Paste functionality.
+    mako # Notification utility.
+  ];
 
   # Enables Gnome Keyring to store secrets for applications. 
   services.gnome.gnome-keyring.enable = true;
 
-  security.pam.services = {
-    login.enableGnomeKeyring = true;
-  };
-  
-  # Security & Authentication
-  security.polkit.enable = true;
-  
-  # Desktop Portals
-  xdg.portal = {
+  # Enable Sway.
+  programs.sway = {
     enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-wlr
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    # Fixes slow app startup times by setting a default portal provider
-    config.common.default = "*";
+    wrapperFeatures.gtk = true;
+  };
+
+  services.greetd = {                                                      
+    enable = true;                                                         
+    settings = {                                                           
+      default_session = {                                                  
+        command = "${pkgs.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "clem";                                                  
+      };                                                                   
+    };                                                                     
+  };
+
+  security.pam.services = {
+    greetd.enableGnomeKeyring = true;
+    swaylock.enableGnomeKeyring = true;
+  
+    # If using a display manager such as GDM
+    #gdm.enableGnomeKeyring = true;
   };
 }
