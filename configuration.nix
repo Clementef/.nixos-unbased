@@ -124,6 +124,10 @@
       # emulators
       mgba
       fceux
+      # music
+      yt-dlp
+      audacity
+      kdePackages.elisa
       # KDE
       kdePackages.kclock # Clock app
       kdePackages.kcolorchooser # A small utility to select a color
