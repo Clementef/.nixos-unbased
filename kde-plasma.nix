@@ -15,4 +15,10 @@
     kdePackages.discover
     kdePackages.qrca
   ];
+
+
+  environment.systemPackages = with pkgs; [
+    wl-clipboard
+    wayland-utils # Wayland utilities
+  ];
 }

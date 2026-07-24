@@ -129,7 +129,6 @@
       kdePackages.kcolorchooser # A small utility to select a color
       kdePackages.ksystemlog # KDE SystemLog Application
       vlc # Cross-platform media player and streaming server
-      wayland-utils # Wayland utilities
       keepassxc
       bolt-launcher
       runelite
@@ -196,7 +195,6 @@
     unzip
     findutils
     maliit-keyboard
-    wl-clipboard
   ];
 
 
