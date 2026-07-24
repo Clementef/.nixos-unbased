@@ -117,7 +117,6 @@
       hunspellDicts.en_US
       alacritty
       rofi
-      nerd-fonts.jetbrains-mono
       qbittorrent
       veracrypt
       R
@@ -153,7 +152,6 @@
     extraGroups = [ "networkmanager" "wheel"];
     packages = with pkgs; [
       mullvad-browser
-      nerd-fonts.jetbrains-mono
       librewolf
       qbittorrent
       veracrypt
@@ -200,6 +198,11 @@
     maliit-keyboard
     wl-clipboard
   ];
+
+
+fonts.packages = with pkgs; [
+  nerd-fonts.jetbrains-mono
+];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
