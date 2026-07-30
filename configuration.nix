@@ -8,7 +8,6 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./kde-plasma.nix
     ];
 
   # Bootloader.
@@ -101,50 +100,35 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
+  # sway and kde plasma
+  services.desktopManager.plasma6.enable = true;
+  programs.sway = {
+    enable = true;
+    wrapperFeatures.gtk = true; # Required for GTK app integration in Sway
+  };
+
+  # display manager
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = ''
+          ${pkgs.greetd.tuigreet}/bin/tuigreet \
+            --time \
+            --asterisks \
+            --user-menu \
+            --cmd sway
+        '';
+        user = "clem";
+      };
+    };
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.clem = {
     isNormalUser = true;
     description = "clem";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-      obsidian
-      anki
-      mullvad-browser
-      discord
-      bitwarden-desktop
-      libreoffice-qt
-      hunspell
-      hunspellDicts.en_US
-      alacritty
-      rofi
-      qbittorrent
-      veracrypt
-      R
-      python315
-      # emulators
-      mgba
-      fceux
-      # music
-      yt-dlp
-      audacity
-      kdePackages.elisa
-      # KDE
-      kdePackages.kclock # Clock app
-      kdePackages.kcolorchooser # A small utility to select a color
-      kdePackages.ksystemlog # KDE SystemLog Application
-      vlc # Cross-platform media player and streaming server
-      keepassxc
-      bolt-launcher
-      runelite
-      neovim
-      lazygit
-      ripgrep
-      fd
-      gnumake
-      libgcc
-      go
-      lm_sensors
-    ];
   };
 
 
@@ -153,15 +137,6 @@
     isNormalUser = true;
     description = "sway test space";
     extraGroups = [ "networkmanager" "wheel"];
-    packages = with pkgs; [
-      mullvad-browser
-      qbittorrent
-      veracrypt
-      vlc # Cross-platform media player and streaming server
-      wayland-utils # Wayland utilities
-      keepassxc
-      neovim
-    ];
   };
 
   nixpkgs.config.permittedInsecurePackages = [
