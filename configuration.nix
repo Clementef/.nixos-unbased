@@ -143,7 +143,7 @@
       gnumake
       libgcc
       go
-      stow
+      lm_sensors
     ];
   };
 
