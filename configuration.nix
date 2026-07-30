@@ -100,11 +100,30 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # sway and kde plasma
+  # kde plasma
   services.desktopManager.plasma6.enable = true;
+
+  environment.plasma6.excludePackages = with pkgs; [
+    kdePackages.kate
+    kdePackages.discover
+    kdePackages.qrca
+  ];
+
+  environment.systemPackages = with pkgs; [
+    wl-clipboard
+    wayland-utils # Wayland utilities
+  ];
+
+  # sway
   programs.sway = {
     enable = true;
     wrapperFeatures.gtk = true; # Required for GTK app integration in Sway
+  };
+
+  security.polkit.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true; # Wayland compositor portal support
   };
 
   # display manager
