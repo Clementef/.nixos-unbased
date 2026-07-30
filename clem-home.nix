@@ -6,6 +6,7 @@
   home.stateVersion = "26.05"; # Use your NixOS release version
 
   programs.home-manager.enable = true;
+  fonts.fontconfig.enable = true;
 
   home.packages = with pkgs; [
     obsidian
