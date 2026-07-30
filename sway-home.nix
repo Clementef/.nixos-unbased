@@ -3,8 +3,8 @@
 { config, pkgs, ... }:
 
 {
-  home.username = "clem";
-  home.homeDirectory = "/home/clem";
+  home.username = "sway";
+  home.homeDirectory = "/home/sway";
   home.stateVersion = "26.05"; # Use your NixOS release version
 
   programs.home-manager.enable = true;
