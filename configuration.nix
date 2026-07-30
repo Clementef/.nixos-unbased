@@ -109,11 +109,6 @@
     kdePackages.qrca
   ];
 
-  environment.systemPackages = with pkgs; [
-    wl-clipboard
-    wayland-utils # Wayland utilities
-  ];
-
   # sway
   programs.sway = {
     enable = true;
@@ -192,6 +187,8 @@
     unzip
     findutils
     maliit-keyboard
+    wl-clipboard
+    wayland-utils # Wayland utilities
   ];
 
 
