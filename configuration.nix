@@ -122,20 +122,10 @@
   };
 
   # display manager
+  programs.regreet.enable = true;
   services.greetd = {
     enable = true;
-    settings = {
-      default_session = {
-        command = ''
-          ${pkgs.greetd.tuigreet}/bin/tuigreet \
-            --time \
-            --asterisks \
-            --user-menu \
-            --cmd sway
-        '';
-        user = "clem";
-      };
-    };
+    # regreet configures the default_session command automatically when enabled
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
