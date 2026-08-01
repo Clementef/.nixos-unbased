@@ -205,7 +205,7 @@
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
-      hack-font
+      nerd-fonts.hack
     ];
   };
   # Some programs need SUID wrappers, can be configured further or are
