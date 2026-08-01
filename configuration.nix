@@ -202,11 +202,12 @@
   ];
 
 
-fonts = {
-  fontDir.enable = true;
-  packages = with pkgs; [
-  ];
-};
+  fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [
+      hack-font
+    ];
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
