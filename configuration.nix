@@ -203,28 +203,10 @@
 
 
 fonts = {
-  enableDefaultPackages = true;
-  fontDir.enable = true; # Generates /run/current-system/sw/share/fonts
-
-  fontconfig = {
-    enable = true;
-    defaultFonts = {
-      monospace = [ "JetBrainsMono Nerd Font" ];
-      sansSerif = [ "Noto Sans" ];
-      serif     = [ "Noto Serif" ];
-      emoji     = [ "Noto Color Emoji" ];
-    };
-  };
-
+  fontDir.enable = true;
   packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-color-emoji
-    dejavu_fonts
   ];
 };
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
