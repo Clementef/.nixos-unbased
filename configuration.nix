@@ -116,7 +116,6 @@
       hunspell
       hunspellDicts.en_US
       alacritty
-      rofi
       qbittorrent
       veracrypt
       R
