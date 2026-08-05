@@ -133,13 +133,49 @@
     isNormalUser = true;
     description = "clem";
     extraGroups = [ "networkmanager" "wheel" ];
+    packages = with pkgs; [
+      obsidian
+      anki
+      mullvad-browser
+      discord
+      bitwarden-desktop
+      libreoffice-qt
+      hunspell
+      hunspellDicts.en_US
+      alacritty
+      qbittorrent
+      veracrypt
+      R
+      python315
+      # emulators
+      mgba
+      fceux
+      # music
+      yt-dlp
+      audacity
+      # KDE
+      kdePackages.kclock
+      kdePackages.kcolorchooser
+      vlc
+      keepassxc
+      bolt-launcher
+      runelite
+      neovim
+      lazygit
+      ripgrep
+      fd
+      gnumake
+      libgcc
+      go
+      lm_sensors
+    ];
   };
 
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.sway = {
+  users.users.two = {
     isNormalUser = true;
-    description = "sway test space";
+    description = "test user";
     extraGroups = [ "networkmanager" "wheel"];
   };
 
@@ -181,11 +217,12 @@
     wayland-utils # Wayland utilities
   ];
 
-
-fonts.packages = with pkgs; [
-  nerd-fonts.jetbrains-mono
-];
-
+  fonts = {
+    fontDir.enable = true;
+    packages = with pkgs; [
+      nerd-fonts.hack
+    ];
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
