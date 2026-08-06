@@ -168,6 +168,7 @@
       libgcc
       go
       lm_sensors
+      gnome-pomodoro
     ];
   };
 
