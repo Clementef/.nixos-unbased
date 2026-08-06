@@ -168,7 +168,6 @@
       libgcc
       go
       lm_sensors
-      fokus
     ];
   };
 
