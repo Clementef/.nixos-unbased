@@ -109,23 +109,10 @@
     kdePackages.qrca
   ];
 
-  # sway
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true; # Required for GTK app integration in Sway
-  };
-
   security.polkit.enable = true;
   xdg.portal = {
     enable = true;
     wlr.enable = true; # Wayland compositor portal support
-  };
-
-  # display manager
-  programs.regreet.enable = true;
-  services.greetd = {
-    enable = true;
-    # regreet configures the default_session command automatically when enabled
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -171,13 +158,6 @@
     ];
   };
 
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.two = {
-    isNormalUser = true;
-    description = "test user";
-    extraGroups = [ "networkmanager" "wheel"];
-  };
 
   nixpkgs.config.permittedInsecurePackages = [
     "electron-39.8.10"
