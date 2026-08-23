@@ -142,6 +142,7 @@
       # emulators
       mgba
       fceux
+      dgen-sdl
       # music
       yt-dlp
       audacity
