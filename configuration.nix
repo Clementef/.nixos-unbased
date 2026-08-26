@@ -161,6 +161,8 @@
       libgcc
       go
       lm_sensors
+      # download manager
+      uget
     ];
   };
 
