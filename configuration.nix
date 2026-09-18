@@ -102,7 +102,6 @@
 
   # kde plasma
   services.desktopManager.plasma6.enable = true;
-  services.displayManager.sddm.enable = false;
 
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.kate
@@ -110,10 +109,10 @@
     kdePackages.qrca
   ];
 
-  # services.displayManager.sddm = {
-  #   enable = true;
-  #   wayland.enable = true;
-  # };
+  services.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
 
   security.polkit.enable = true;
   xdg.portal = {
