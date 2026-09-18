@@ -102,6 +102,13 @@
 
   # kde plasma
   services.desktopManager.plasma6.enable = true;
+  services.displayManager.sddm.enable = false;
+
+  environment.loginShellInit = ''
+    if [ -z "$DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+      exec startplasma-wayland
+    fi
+ '';
 
   environment.plasma6.excludePackages = with pkgs; [
     kdePackages.kate
