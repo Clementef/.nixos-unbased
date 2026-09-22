@@ -114,6 +114,9 @@
     wayland.enable = true;
   };
 
+  # GNOME thunderbolt daemon
+  services.hardware.bolt.enable = true;
+
   security.polkit.enable = true;
   xdg.portal = {
     enable = true;
@@ -203,6 +206,7 @@
     maliit-keyboard
     wl-clipboard
     wayland-utils # Wayland utilities
+    plasma5Packages.plasma-thunderbolt
   ];
 
   fonts = {
