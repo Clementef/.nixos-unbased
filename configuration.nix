@@ -149,6 +149,7 @@
       # KDE
       kdePackages.kclock
       kdePackages.kcolorchooser
+      kdePackages.arianna #ereader
       vlc
       keepassxc
       bolt-launcher
