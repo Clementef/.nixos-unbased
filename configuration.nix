@@ -206,7 +206,7 @@
     maliit-keyboard
     wl-clipboard
     wayland-utils # Wayland utilities
-    plasma5Packages.plasma-thunderbolt
+    kdePackages.plasma-thunderbolt
   ];
 
   fonts = {
