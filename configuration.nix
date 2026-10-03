@@ -143,6 +143,10 @@
       mgba
       fceux
       dgen-sdl
+      # retroarch
+      (retroarch.withCores (cores: with cores; [
+        beetle-psx-hw
+      ]))
       # music
       yt-dlp
       audacity
