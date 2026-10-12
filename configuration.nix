@@ -139,13 +139,14 @@
       veracrypt
       R
       python315
-      # emulators
-      mgba
-      fceux
-      dgen-sdl
       # retroarch
       (retroarch.withCores (cores: with cores; [
-        beetle-psx-hw
+        fceumm          # NES
+        snes9x          # SNES
+        gambatte        # GB and GBC
+        mgba            # gba
+        beetle-psx-hw   # ps1
+        genesis-plus-gx # sega genesis
       ]))
       # music
       yt-dlp
