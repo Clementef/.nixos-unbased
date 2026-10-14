@@ -207,6 +207,7 @@
     zip
     unzip
     findutils
+    coreutils
     maliit-keyboard
     wl-clipboard
     wayland-utils # Wayland utilities
