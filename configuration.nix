@@ -181,6 +181,8 @@
       lm_sensors
       # download manager
       uget
+      usbutils
+      pciutils
     ];
   };
 
