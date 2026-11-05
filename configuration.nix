@@ -181,8 +181,10 @@
       lm_sensors
       # download manager
       uget
+      # diagnostic utilities
       usbutils
       pciutils
+      cryptomator
     ];
   };
 
