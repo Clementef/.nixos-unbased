@@ -244,6 +244,20 @@
     };
   };
 
+  # enable trim for mounted filesystems
+  let
+    # from `lsusb`: ID vendor:product
+    bridge = { vendor = "174c"; product = "55aa"; };
+  in {
+    services.udev.extraRules = ''
+      ACTION=="add|change", SUBSYSTEM=="scsi_disk", \
+        ATTRS{idVendor}=="${bridge.vendor}", ATTRS{idProduct}=="${bridge.product}", \
+        ATTR{provisioning_mode}="unmap"
+    '';
+
+    services.fstrim.enable = true;
+  }
+
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
