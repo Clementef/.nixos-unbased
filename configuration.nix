@@ -4,7 +4,10 @@
 
 { config, pkgs, ... }:
 
-{
+let
+  # from `lsusb`: ID vendor:product
+  bridge = { vendor = "174c"; product = "55aa"; };
+in {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -245,18 +248,13 @@
   };
 
   # enable trim for mounted filesystems
-  let
-    # from `lsusb`: ID vendor:product
-    bridge = { vendor = "174c"; product = "55aa"; };
-  in {
-    services.udev.extraRules = ''
-      ACTION=="add|change", SUBSYSTEM=="scsi_disk", \
-        ATTRS{idVendor}=="${bridge.vendor}", ATTRS{idProduct}=="${bridge.product}", \
-        ATTR{provisioning_mode}="unmap"
-    '';
+  services.udev.extraRules = ''
+    ACTION=="add|change", SUBSYSTEM=="scsi_disk", \
+      ATTRS{idVendor}=="${bridge.vendor}", ATTRS{idProduct}=="${bridge.product}", \
+      ATTR{provisioning_mode}="unmap"
+  '';
 
-    services.fstrim.enable = true;
-  }
+  services.fstrim.enable = true;
 
   fonts = {
     fontDir.enable = true;
