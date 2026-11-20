@@ -232,18 +232,6 @@
     wayland-utils # Wayland utilities
   ];
 
-  # mounting preferences for BTRFS drives
-  services.udisks2 = {
-    enable = true;
-    settings = {
-      "mount_options.conf" = {
-        defaults = {
-          btrfs_defaults = "compress=zstd:3,noatime";
-        };
-      };
-    };
-  };
-
   fonts = {
     fontDir.enable = true;
     packages = with pkgs; [
