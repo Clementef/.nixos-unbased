@@ -233,10 +233,16 @@
   ];
 
   # mounting preferences for BTRFS drives
-  environment.etc."udisks2/mount_options.conf".text = ''
-    [defaults]
-    btrfs_defaults=compress=zstd:3,noatime
-  '';
+  services.udisks2 = {
+    enable = true;
+    settings = {
+      "mount_options.conf" = {
+        defaults = {
+          btrfs_defaults = "compress=zstd:3,noatime";
+        };
+      };
+    };
+  };
 
   fonts = {
     fontDir.enable = true;
