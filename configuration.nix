@@ -185,6 +185,10 @@
       usbutils
       pciutils
       cryptomator
+      # BTRFS partition tools
+      parted
+      btrfs-progs
+      compsize
     ];
   };
 
@@ -227,6 +231,12 @@
     wl-clipboard
     wayland-utils # Wayland utilities
   ];
+
+  # mounting preferences for BTRFS drives
+  environment.etc."udisks2/mount_options.conf".text = ''
+    [defaults]
+    btrfs_defaults=compress=zstd:3,noatime
+  '';
 
   fonts = {
     fontDir.enable = true;
