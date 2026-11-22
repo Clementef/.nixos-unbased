@@ -172,8 +172,9 @@ in {
       kdePackages.arianna #ereader
       vlc
       keepassxc
-      bolt-launcher
-      runelite
+      # runescape
+      # bolt-launcher
+      # runelite
       neovim
       lazygit
       ripgrep
