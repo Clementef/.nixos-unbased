@@ -145,9 +145,11 @@ in {
       mullvad-browser
       discord
       bitwarden-desktop
+      # libreoffice and dictionary
       libreoffice-qt
       hunspell
       hunspellDicts.en_US
+      # terminal emulator
       alacritty
       qbittorrent
       veracrypt
@@ -193,6 +195,8 @@ in {
       parted
       btrfs-progs
       compsize
+      # cloud storage
+      rclone
     ];
   };
 
