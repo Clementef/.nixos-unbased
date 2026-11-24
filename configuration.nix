@@ -203,7 +203,7 @@ in {
   users.users.test = {
     isNormalUser = true;
     description = "test";
-    extraGroups = [];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       mullvad-browser
       alacritty
