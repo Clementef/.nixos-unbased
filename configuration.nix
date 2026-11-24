@@ -200,6 +200,24 @@ in {
     ];
   };
 
+  users.users.test = {
+    isNormalUser = true;
+    description = "test";
+    extraGroups = [];
+    packages = with pkgs; [
+      mullvad-browser
+      alacritty
+      qbittorrent
+      veracrypt
+      vlc
+      keepassxc
+      neovim
+      lazygit
+      # download manager
+      uget
+    ];
+  };
+
 
   nixpkgs.config.permittedInsecurePackages = [
     "electron-39.8.10"
